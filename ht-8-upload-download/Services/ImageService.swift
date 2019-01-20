@@ -21,13 +21,21 @@ class ImageServiceImpl: ImageService {
 
     func uploadImageByLink(link imageUrl: String?, onReceiveAction: @escaping ((String?) -> ())) {
         let defaultLink = "https://loading.io/spinners/spiral/lg.rotate-spiral-spinner.gif"
-        gyphyApi.uploadUrl(imageLink: imageUrl ?? defaultLink, onReceiveAction: onReceiveAction)
+        var link = defaultLink
+        if !(imageUrl ?? "").isEmpty {
+            link = imageUrl!
+        }
+        gyphyApi.uploadUrl(imageLink: link, onReceiveAction: onReceiveAction)
     }
 
 
     func downloadFileById(fileId id: String?, onReceiveAction: @escaping ((String?) -> ())) {
         let defaultId = "2SXRjZG012DlYRRBT8"
-        gyphyApi.extractVideoUrl(imageId: id ?? defaultId, onReceiveAction: onReceiveAction)
+        var result = defaultId
+        if !(id ?? "").isEmpty {
+            result = id!
+        }
+        gyphyApi.extractVideoUrl(imageId: result, onReceiveAction: onReceiveAction)
     }
 
 
