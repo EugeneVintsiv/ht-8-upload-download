@@ -226,6 +226,20 @@ public struct FixedHeight: Codable {
         self.frames = frames
         self.hash = hash
     }
+
+    static func extractMp4(with data: Data?) -> String? {
+        guard let data = data else {
+            return nil
+        }
+
+        do {
+            let object = try JSONDecoder().decode(GiphyResponse<DataClass>.self, from: data)
+            return object.data.images.original.mp4
+        } catch {
+            print("Decode failed: \(error)")
+            return nil
+        }
+    }
 }
 
 public struct Looping: Codable {
