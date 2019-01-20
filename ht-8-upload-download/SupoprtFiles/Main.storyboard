@@ -43,25 +43,49 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UTu-3m-ZR6">
+                                <rect key="frame" x="16" y="161" width="343" height="30"/>
+                                <state key="normal" title="Extract Video Link"/>
+                                <connections>
+                                    <action selector="onExtractVideoLinkClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DCn-7E-was"/>
+                                </connections>
+                            </button>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Video Link" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rZc-EV-ehO">
+                                <rect key="frame" x="16" y="207" width="343" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="bKX-wJ-ch4"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="rZc-EV-ehO" secondAttribute="trailing" constant="16" id="81s-iO-TRI"/>
+                            <constraint firstItem="UTu-3m-ZR6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Lp3-b6-u8a"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="wX7-69-6Od" secondAttribute="trailing" constant="16" id="MPJ-gM-fWS"/>
+                            <constraint firstItem="rZc-EV-ehO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="ONV-eh-uHj"/>
                             <constraint firstItem="wX7-69-6Od" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="OOJ-us-SJ0"/>
                             <constraint firstItem="zY1-uM-LyS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="RiM-SC-zqy"/>
                             <constraint firstItem="zY1-uM-LyS" firstAttribute="top" secondItem="4DU-Oz-OsX" secondAttribute="bottom" constant="8" id="UoN-uE-fDc"/>
                             <constraint firstItem="4DU-Oz-OsX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Wf0-4h-pTw"/>
                             <constraint firstItem="wX7-69-6Od" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="YiB-NQ-ncS"/>
+                            <constraint firstItem="UTu-3m-ZR6" firstAttribute="top" secondItem="zY1-uM-LyS" secondAttribute="bottom" constant="16" id="ZzI-cL-LwB"/>
+                            <constraint firstItem="rZc-EV-ehO" firstAttribute="top" secondItem="UTu-3m-ZR6" secondAttribute="bottom" constant="16" id="jY2-FN-lfV"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4DU-Oz-OsX" secondAttribute="trailing" constant="16" id="oDw-Ml-ZcX"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="zY1-uM-LyS" secondAttribute="trailing" constant="16" id="soj-fW-JYj"/>
                             <constraint firstItem="4DU-Oz-OsX" firstAttribute="top" secondItem="wX7-69-6Od" secondAttribute="bottom" constant="20" id="tKU-uZ-3mx"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="UTu-3m-ZR6" secondAttribute="trailing" constant="16" id="ynh-Sn-JBv"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="extractVideoLinkBtn" destination="UTu-3m-ZR6" id="0ow-u6-aPq"/>
                         <outlet property="imageIdLabel" destination="zY1-uM-LyS" id="4tb-RL-I7i"/>
                         <outlet property="uploadImageBtn" destination="4DU-Oz-OsX" id="3IN-z0-zbp"/>
                         <outlet property="urlLinkTextInput" destination="wX7-69-6Od" id="3Zt-ep-KFE"/>
+                        <outlet property="videoLinkLabel" destination="rZc-EV-ehO" id="U7Q-Un-seS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
