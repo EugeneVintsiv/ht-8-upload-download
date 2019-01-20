@@ -14,7 +14,6 @@ class GiphyApi: GiphyNetworkApi {
 
     func uploadUrl(imageLink sourceLink: String, onReceiveAction: @escaping ((String?) -> ())) {
         let apiKey = "lc3aGasGwDbt4ZWhRNQGWsZIbS4dzuBu"
-        let sourceLink = "https://loading.io/spinners/spiral/lg.rotate-spiral-spinner.gif"
         let link = "https://upload.giphy.com/v1/gifs?api_key=\(apiKey)&source_image_url=\(sourceLink)"
 
         var postRequest = URLRequest(url: URL(string: link)!, cachePolicy: .reloadIgnoringCacheData, timeoutInterval: 60.0)
@@ -35,8 +34,7 @@ class GiphyApi: GiphyNetworkApi {
 
     func extractVideoUrl(imageId: String, onReceiveAction: @escaping ((String?) -> ())) {
         let apiKey = "lc3aGasGwDbt4ZWhRNQGWsZIbS4dzuBu"
-        let id = "2SXRjZG012DlYRRBT8"
-        let link = "https://api.giphy.com/v1/gifs/\(id)?api_key=\(apiKey)"
+        let link = "https://api.giphy.com/v1/gifs/\(imageId)?api_key=\(apiKey)"
 
         var postRequest = URLRequest(url: URL(string: link)!, cachePolicy: .reloadIgnoringCacheData, timeoutInterval: 60.0)
         postRequest.httpMethod = "GET"
