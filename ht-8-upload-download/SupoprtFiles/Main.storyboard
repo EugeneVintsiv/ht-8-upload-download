@@ -71,16 +71,26 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Obg-a5-hvZ">
+                                <rect key="frame" x="8" y="321" width="359" height="30"/>
+                                <state key="normal" title="Play Downloaded File"/>
+                                <connections>
+                                    <action selector="onPlayButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="COB-lQ-nU8"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="rZc-EV-ehO" secondAttribute="trailing" constant="16" id="81s-iO-TRI"/>
+                            <constraint firstItem="Obg-a5-hvZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="9bT-ug-8wm"/>
+                            <constraint firstItem="Obg-a5-hvZ" firstAttribute="top" secondItem="FLC-x9-tCa" secondAttribute="bottom" constant="16" id="Hxh-LA-o6K"/>
                             <constraint firstItem="UTu-3m-ZR6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Lp3-b6-u8a"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="wX7-69-6Od" secondAttribute="trailing" constant="16" id="MPJ-gM-fWS"/>
                             <constraint firstItem="rZc-EV-ehO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="ONV-eh-uHj"/>
                             <constraint firstItem="wX7-69-6Od" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="OOJ-us-SJ0"/>
                             <constraint firstItem="zY1-uM-LyS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="RiM-SC-zqy"/>
                             <constraint firstItem="zY1-uM-LyS" firstAttribute="top" secondItem="4DU-Oz-OsX" secondAttribute="bottom" constant="8" id="UoN-uE-fDc"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Obg-a5-hvZ" secondAttribute="trailing" constant="8" id="WAm-rq-eh1"/>
                             <constraint firstItem="4DU-Oz-OsX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Wf0-4h-pTw"/>
                             <constraint firstItem="wX7-69-6Od" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="YiB-NQ-ncS"/>
                             <constraint firstItem="UTu-3m-ZR6" firstAttribute="top" secondItem="zY1-uM-LyS" secondAttribute="bottom" constant="16" id="ZzI-cL-LwB"/>
@@ -101,6 +111,7 @@
                     <connections>
                         <outlet property="extractVideoLinkBtn" destination="UTu-3m-ZR6" id="0ow-u6-aPq"/>
                         <outlet property="imageIdLabel" destination="zY1-uM-LyS" id="4tb-RL-I7i"/>
+                        <outlet property="playBtn" destination="Obg-a5-hvZ" id="dog-sx-QJU"/>
                         <outlet property="progressPercent" destination="FLC-x9-tCa" id="U7I-dl-C1V"/>
                         <outlet property="progressView" destination="jLA-PC-bMV" id="G2Y-Uo-Lku"/>
                         <outlet property="uploadImageBtn" destination="4DU-Oz-OsX" id="3IN-z0-zbp"/>

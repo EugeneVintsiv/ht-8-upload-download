@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVKit
 
 class ViewController: UIViewController {
 
@@ -17,6 +18,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var videoLinkLabel: UILabel!
     @IBOutlet weak var progressView: UIProgressView!
     @IBOutlet weak var progressPercent: UILabel!
+    @IBOutlet weak var playBtn: UIButton!
     
     @IBAction func onUploadButtonClick(_ sender: Any) {
         uploadImageBtn.isEnabled = false
@@ -34,6 +36,10 @@ class ViewController: UIViewController {
         videoLinkLabel.isHidden = true
         downloadFile()
     }
+    
+    @IBAction func onPlayButtonClicked(_ sender: UIButton) {
+        playVideo(path: self.lastUploadedFileUrl)
+    }
 
 //    DI
     private lazy var imageService: ImageService = ImageServiceImpl()
@@ -46,6 +52,7 @@ class ViewController: UIViewController {
     }()
 
     private let tmpLink = "https://media1.giphy.com/media/2SXRjZG012DlYRRBT8/giphy.mp4"
+    private var lastUploadedFileUrl: URL? = nil
 
     override func viewDidLoad() {
         urlLinkTextInput.text = "https://loading.io/spinners/spiral/lg.rotate-spiral-spinner.gif"
@@ -64,8 +71,9 @@ class ViewController: UIViewController {
             self.progressView.progress = 0.0
             self.progressPercent.isHidden = false
             self.progressPercent.text = "0"
-
+            self.playBtn.isHidden = true
             self.progressView.isHidden = false
+
             self.downloadsSession.downloadTask(with: URL(string: link!)!).resume()
         }
     }
@@ -76,13 +84,17 @@ extension ViewController: URLSessionDownloadDelegate {
     func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, didFinishDownloadingTo location: URL) {
         guard let sourceURL = downloadTask.originalRequest?.url else { return }
         let destinationURL = localFilePath(for: sourceURL)
-        print(destinationURL)
         let fileManager = FileManager.default
         try? fileManager.removeItem(at: destinationURL)
         do {
             try fileManager.copyItem(at: location, to: destinationURL)
         } catch let error {
             print("Could not copy file to disk: \(error.localizedDescription)")
+        }
+        self.lastUploadedFileUrl = destinationURL
+
+        DispatchQueue.main.async {
+            self.playBtn.isHidden = false
         }
     }
     
@@ -100,6 +112,20 @@ extension ViewController: URLSessionDownloadDelegate {
 
     func localFilePath(for url: URL) -> URL {
         return documentsPath.appendingPathComponent(url.lastPathComponent)
+    }
+
+    private func playVideo(path location: URL?) {
+        if location == nil {
+            print("Video File not found")
+            return
+        }
+
+        let player = AVPlayer(url: location!)
+        let playerController = AVPlayerViewController()
+        playerController.player = player
+        present(playerController, animated: true) {
+            player.play()
+        }
     }
 }
 
