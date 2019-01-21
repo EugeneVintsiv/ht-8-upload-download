@@ -29,6 +29,7 @@ class ViewController: UIViewController {
             self.imageIdLabel.isHidden = false
             self.uploadImageBtn.isEnabled = true
         }
+        self.uploadImageBtn.isEnabled = true
     }
 
     @IBAction func onExtractVideoLinkClicked(_ sender: Any) {
@@ -56,6 +57,7 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         urlLinkTextInput.text = "https://loading.io/spinners/spiral/lg.rotate-spiral-spinner.gif"
+//        urlLinkTextInput.text = "https://media.giphy.com/media/HSE2iNDl7ewRa/giphy.gif"
 
 //        reset labels text
         videoLinkLabel.text = ""
@@ -92,6 +94,8 @@ extension ViewController: URLSessionDownloadDelegate {
             print("Could not copy file to disk: \(error.localizedDescription)")
         }
         self.lastUploadedFileUrl = destinationURL
+        print("destinationUrl: ")
+        print(destinationURL)
 
         DispatchQueue.main.async {
             self.playBtn.isHidden = false
