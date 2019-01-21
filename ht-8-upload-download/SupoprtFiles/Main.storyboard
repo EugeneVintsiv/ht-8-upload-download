@@ -62,6 +62,15 @@
                             <progressView hidden="YES" opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="jLA-PC-bMV">
                                 <rect key="frame" x="16" y="278" width="343" height="2"/>
                             </progressView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="percent" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FLC-x9-tCa">
+                                <rect key="frame" x="16" y="284" width="343" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="jPc-kH-iTI"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -75,13 +84,16 @@
                             <constraint firstItem="4DU-Oz-OsX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Wf0-4h-pTw"/>
                             <constraint firstItem="wX7-69-6Od" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="YiB-NQ-ncS"/>
                             <constraint firstItem="UTu-3m-ZR6" firstAttribute="top" secondItem="zY1-uM-LyS" secondAttribute="bottom" constant="16" id="ZzI-cL-LwB"/>
+                            <constraint firstItem="FLC-x9-tCa" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="fSe-Bb-C5Z"/>
                             <constraint firstItem="jLA-PC-bMV" firstAttribute="top" secondItem="rZc-EV-ehO" secondAttribute="bottom" constant="50" id="hvP-8f-0ii"/>
                             <constraint firstItem="rZc-EV-ehO" firstAttribute="top" secondItem="UTu-3m-ZR6" secondAttribute="bottom" constant="16" id="jY2-FN-lfV"/>
+                            <constraint firstItem="FLC-x9-tCa" firstAttribute="top" secondItem="jLA-PC-bMV" secondAttribute="baseline" constant="4" id="lBR-Le-6J7"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="jLA-PC-bMV" secondAttribute="trailing" constant="16" id="nwb-kp-tMW"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4DU-Oz-OsX" secondAttribute="trailing" constant="16" id="oDw-Ml-ZcX"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="zY1-uM-LyS" secondAttribute="trailing" constant="16" id="soj-fW-JYj"/>
                             <constraint firstItem="4DU-Oz-OsX" firstAttribute="top" secondItem="wX7-69-6Od" secondAttribute="bottom" constant="20" id="tKU-uZ-3mx"/>
                             <constraint firstItem="jLA-PC-bMV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="wN0-a2-iSx"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="FLC-x9-tCa" secondAttribute="trailing" constant="16" id="wvx-2F-2Om"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="UTu-3m-ZR6" secondAttribute="trailing" constant="16" id="ynh-Sn-JBv"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -89,6 +101,7 @@
                     <connections>
                         <outlet property="extractVideoLinkBtn" destination="UTu-3m-ZR6" id="0ow-u6-aPq"/>
                         <outlet property="imageIdLabel" destination="zY1-uM-LyS" id="4tb-RL-I7i"/>
+                        <outlet property="progressPercent" destination="FLC-x9-tCa" id="U7I-dl-C1V"/>
                         <outlet property="progressView" destination="jLA-PC-bMV" id="G2Y-Uo-Lku"/>
                         <outlet property="uploadImageBtn" destination="4DU-Oz-OsX" id="3IN-z0-zbp"/>
                         <outlet property="urlLinkTextInput" destination="wX7-69-6Od" id="3Zt-ep-KFE"/>
